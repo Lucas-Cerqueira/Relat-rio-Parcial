@@ -27,12 +27,12 @@
 \maketitle
 
 \begin{abstract}
-	Projeto em parceria com a Marinha do Brasil com o objetivo de classificar sinais provenientes de navios através de técnicas de aprendizado de máquina. O modelo de rede escolhido foi rede neural artificial com muitas camadas, também conhecido como Deep Learning. Após o treinamento adequado utilizando gravações de navios cedidas pela Marinha, é possível identificar a qual classe pertencem e detectar possíveis novidades. O trabalho consiste em encontrar a melhor forma de treinar a arquitetura de rede neural com muitas camadas a fim de obter o menor erro possível nas classificações.
+	Projeto em parceria com a Marinha do Brasil com o objetivo de classificar sinais provenientes de navios através de técnicas de aprendizado de máquina. O modelo de aprendizado de máquina escolhido foi rede neural artificial com muitas camadas, também conhecido como \textit{Deep Learning}. Após o treinamento adequado utilizando gravações de navios cedidas pela Marinha, é possível identificar a qual classe pertencem e detectar possíveis novidades. O trabalho consiste em encontrar a melhor forma de treinar a arquitetura de rede neural com muitas camadas a fim de obter o menor erro possível nas classificações.
 \end{abstract}
 \section*{Introdução}
-	Para um submarino, o mais importante é não denunciar sua posição. Ao usar um sonar ativo, o qual emite ondas sonoras que, ao colidirem com obstáculos, retornam ao emissor, o submarino poderia ser localizado por navios inimigos. Já em um sonar passivo, o submarino está sempre captando sinais sonoros e cabe a um operador extrair qual a classe de navio que produziu o ruído captado pelo sonar passivo. \\\\
+	Para um submarino, o mais importante é não denunciar sua posição \cite{william1_ref, william2_ref}. Ao usar um sonar ativo, o qual emite ondas sonoras que, ao colidirem com obstáculos, retornam ao emissor, o submarino poderia ser localizado por navios inimigos. Já em um sonar passivo, o submarino está sempre captando sinais sonoros e cabe a um operador extrair qual a classe de navio que produziu o ruído captado pelo sonar passivo. \\\\
 	%Contudo, o ambiente marinho é altamente ruidoso: sons produzidos por navios devido à sua propulsão ou maquinário, ruídos de animais ou ambientais (chuva, ondas, deslocamentos sísmicos) e sons refletidos no leito marinho. Além disso, os espectros de frequências de alguns ruídos se sobrepõem, ou seja, o som produzido por uma baleia jubarte  poderia ser confundido com o de uma fragata. Ainda assim, a rede neural deve ser capaz de distinguir os navios em meio a todos esses sons.
-	Contudo, a análise desse som é realizada no domínio da frequência e o ambiente marinho é altamente ruidoso. O ruído próprio e o ruído de fundo dificultam a identificação dos contatos. Por esse motivo, um sistema de apoio para a classificação desses contatos pode auxiliar o operador sonar em seu trabalho.
+	Contudo, a análise desse som é realizada no domínio da frequência e o ambiente marinho é altamente ruidoso \cite{lofargram_ref}. O ruído próprio e o ruído de fundo dificultam a identificação dos contatos. Por esse motivo, um sistema de apoio para a classificação desses contatos pode auxiliar o operador sonar em seu trabalho.
 	\vspace{1cm}
 
 \section*{Objetivo}
@@ -43,7 +43,7 @@
 	
 \section*{Metodologia/Teoria}
 	\subsection*{Redes neurais artificiais}
-	Redes neurais artificiais são uma família de métodos inspirada em modelos biológicos do cérebro capazes de aprender características e reconhecer padrões, sendo amplamente utilizadas para a classificação de sinais em sonar passivo. Geralmente, são apresentadas como neurônios conectados entre si com um valor numérico para essas conexões, conhecido como peso.\\\\
+	Redes neurais artificiais são uma família de métodos inspirada em modelos biológicos do cérebro capazes de aprender características e reconhecer padrões, sendo amplamente utilizadas para a classificação de sinais em sonar passivo \cite{william1_ref, william2_ref}. Geralmente, são apresentadas como neurônios conectados entre si com um valor numérico para essas conexões, conhecido como peso.\\\\
 	O processo de aprendizado ocorre através do treinamento, que pode ser supervisionado ou não supervisionado: no primeiro, os eventos a serem usados no treinamento precisam ser etiquetados com relação a que classe pertencem; no treinamento não supervisionado, não ocorre essa etiquetagem.
 	\begin{center}
 		\def\layersep{2.5cm}
@@ -167,7 +167,7 @@
 		\item 94.4\% dos eventos etiquetados como Classe 3 foram corretamente classificados
 		\item 98.4\% dos eventos etiquetados como Classe 4 foram corretamente classificados
 	\end{itemize}
-	Outro resultado a se avaliar é a confiabilidade da classificação:
+	Outro resultado a se avaliar é a Probabilidade de Detecção do classificador:
 	\begin{itemize}
 		\item 97,3\% dos eventos classificados como Classe 1 eram de fato da Classe 1
 		\item 95,8\% dos eventos classificados como Classe 2 eram de fato da Classe 2
@@ -189,7 +189,7 @@
 		\item 71.4\% dos eventos etiquetados como Classe 3 foram corretamente classificados
 		\item 91,0\% dos eventos etiquetados como Classe 4 foram corretamente classificados
 	\end{itemize}
-	Analisando a confiabilidade da classificação:
+	Analisando a Probabilidade de Detecção:
 	\begin{itemize}
 		\item 82,8\% dos eventos classificados como Classe 1 eram de fato da Classe 1
 		\item 87,6\% dos eventos classificados como Classe 2 eram de fato da Classe 2
@@ -234,6 +234,17 @@
 		
 		\bibitem{sae-stanford}
 		http://ufldl.stanford.edu/wiki/index.php/Stacked\_Autoencoders
+
+		\bibitem{william1_ref}
+		Soares-Filho W., J. Manoel de Seixas, and L. Pereira Caloba, Principal component analysis for classifying passive sonar signals, ISCAS, vol. 3, pp. 592–595, May 2001.
+		
+		\bibitem{william2_ref}
+		Soares-Filho W., J. Manoel de Seixas, and L. Pereira Caloba, Enlarging neural class detection capacity in passive sonar system, Proc. IEEE Int. Symp. Circuits and Systems, pp. 105-108, May 2002.
+		
+		\bibitem{lofargram_ref}
+		Di Martino, J.C.; Haton, J.P.; Laporte, A., Lofargram line tracking by multistage decisionprocess. IEEE International Conference on Acoustics, Speech, and Signal Processing, Minneapolis, USA, vol. 1, pp. 27-30 April, 1993.
+
+		
 	\end{thebibliography}
 	
 	\chapter*{Comentários finais}
